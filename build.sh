@@ -7,8 +7,6 @@ echo GOPATH=$GOPATH
 go get github.com/gopherjs/gopherjs
 go get honnef.co/go/js/dom
 
-pkg=github.com/udhos/mustago
-
 gofmt -s -w main.go
 go tool fix main.go
 go tool vet .
