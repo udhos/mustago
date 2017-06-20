@@ -4,25 +4,24 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/gopherjs/gopherjs/js"
+	"github.com/cbroglie/mustache"
+	"gopkg.in/yaml.v2"
 	"honnef.co/go/js/dom"
 )
 
-const version = "0.1"
+const version = "0.2"
 
 func main() {
 
-	logf("mustago version: %s", version)
-
-	document := js.Global.Get("document")
-
 	param := docQuery("#parameters")
 	input := docQuery("#input")
-	output := docQuery("#output")
 	logbox := docQuery("#log")
 
-	logf("main: document=%v param=%v input=%v output=%v log=%v", document, param, input, output, logbox)
-	logf("main: param=%q input=%q output=%q log=%q", param.TextContent(), input.TextContent(), output.TextContent(), logbox.TextContent())
+	if box, ok := logbox.(*dom.HTMLTextAreaElement); ok {
+		box.Value = "" // clear log
+	}
+
+	logf("main: mustago version: %s", version)
 
 	param.AddEventListener("change", false, listenerParam)
 	input.AddEventListener("change", false, listenerInput)
@@ -66,7 +65,33 @@ func updateOutput() {
 		return
 	}
 
-	o.Value = fmt.Sprintf("updated: param=%q input=%q", p.Value, i.Value)
+	var result string
+
+	buf := []byte(p.Value)
+	var doc interface{}
+	errParse := yaml.Unmarshal(buf, &doc)
+	if errParse != nil {
+		msg := fmt.Errorf("updateOutput: YAML parse error; %v", errParse)
+		logf("%s", msg)
+		result = msg.Error()
+		setOutput(o, p.Value, i.Value, result)
+		return
+	}
+
+	var errRender error
+	result, errRender = mustache.Render(i.Value, doc)
+	if errRender != nil {
+		msg := fmt.Errorf("updateOutput: mustache render error; %v", errRender)
+		logf("%s", msg)
+		result = msg.Error()
+	}
+
+	setOutput(o, p.Value, i.Value, result)
+}
+
+func setOutput(output *dom.HTMLTextAreaElement, param, input, result string) {
+	//output.Value = fmt.Sprintf("updated: param=%q input=%q\noutput:\n%s", param, input, result)
+	output.Value = result
 }
 
 func docQuery(query string) dom.Element {
@@ -84,9 +109,9 @@ func logf(format string, a ...interface{}) {
 	}
 
 	// write to dom element
-	old := box.TextContent()
+	old := box.Value
 	if l := len(old); l > 0 && old[l-1] != '\n' {
 		old += "\n"
 	}
-	box.SetTextContent(old + msg + "\n")
+	box.Value = old + msg + "\n"
 }

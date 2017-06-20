@@ -5,7 +5,9 @@
 echo GOPATH=$GOPATH
 
 go get github.com/gopherjs/gopherjs
+go get github.com/cbroglie/mustache
 go get honnef.co/go/js/dom
+go get gopkg.in/yaml.v2
 
 gofmt -s -w main.go
 go tool fix main.go
