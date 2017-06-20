@@ -1,17 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		
-		<title>mustago</title>		
-    </head>
-    <body>
-		<div id="parameters"></div>
-		<div id="input"></div>
-		<div id="output"></div>
-		<div id="log"></div>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>mustago</title>
 
-		<script src="mustago.js"></script>
-    </body>
+    <style>
+      
+      div {
+      /* inset shadow for visual aid only: allow to easily see the div boundaries */
+      //box-shadow: 0 0 1px black inset;
+      }
+
+      #contentBox {
+      margin-left: 1%;
+      width: 98%;
+      }
+
+      #contentBox .column {
+      float: left;
+      margin: 0 auto;
+      width: 50%;
+      box-sizing: border-box;
+      }
+
+      .row {
+      clear: both;
+      margin-left: 1%;
+      width: 98%;
+      }
+
+      .widthFull {
+      width: 100%;
+      }
+
+      h3 {
+      text-align: center;
+      vertical-align: bottom;
+      margin: 0 auto;
+      }
+
+      textarea {
+      resize: none;
+      }
+      
+    </style>
+
+  </head>
+  
+  <body>
+
+    <div class="row">
+      <h3>Parameters</h3>
+      <textarea class="widthFull" resize="none" id="parameters" rows="10">VARIABLE: Value</textarea>
+    </div>
+
+    <div class="widthFull" id="contentBox">
+      
+      <div class="column">
+	<h3>Input Template</h3>
+        <textarea class="widthFull" id="input" rows="10">The variable has value: {{VARIABLE}}</textarea>
+      </div>
+
+      <div class="column">
+	<h3>Output</h3>
+	<textarea disabled class="widthFull" id="output" rows="10">Empty output</textarea>
+      </div>
+      
+    </div>
+
+    <div class="row">
+      <h3>Messages</h3>
+      <textarea class="widthFull" id="log" rows="10">Empty log</textarea>
+    </div>
+
+    <script src="mustago.js"></script>
+  </body>
 </html>
