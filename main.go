@@ -23,6 +23,11 @@ func main() {
 
 	logf("main: mustago version: %s", version)
 
+	ver := docQuery("#version")
+	if v, ok := ver.(*dom.HTMLSpanElement); ok {
+		v.SetInnerHTML("mustache " + version)
+	}
+
 	param.AddEventListener("change", false, listenerParam)
 	input.AddEventListener("change", false, listenerInput)
 }
