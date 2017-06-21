@@ -3,13 +3,14 @@ package main
 import (
 	"fmt"
 	"log"
+	"strings"
 
 	"github.com/cbroglie/mustache"
 	"gopkg.in/yaml.v2"
 	"honnef.co/go/js/dom"
 )
 
-const version = "0.2"
+const version = "0.3"
 
 func main() {
 
@@ -30,6 +31,8 @@ func main() {
 
 	param.AddEventListener("change", false, listenerParam)
 	input.AddEventListener("change", false, listenerInput)
+	param.AddEventListener("keyup", false, listenerParam)
+	input.AddEventListener("keyup", false, listenerInput)
 }
 
 func listenerParam(ev dom.Event) {
@@ -38,7 +41,7 @@ func listenerParam(ev dom.Event) {
 	if !ok {
 		return
 	}
-	logf("listenerParam: param=%q", p.Value)
+	logf("listenerParam: event=%v param=%q", ev, p.Value)
 	updateOutput()
 }
 
@@ -48,7 +51,7 @@ func listenerInput(ev dom.Event) {
 	if !ok {
 		return
 	}
-	logf("listenerInput: input=%q", i.Value)
+	logf("listenerInput: event=%v input=%q", ev, i.Value)
 	updateOutput()
 }
 
@@ -119,4 +122,12 @@ func logf(format string, a ...interface{}) {
 		old += "\n"
 	}
 	box.Value = old + msg + "\n"
+
+	max := 10
+	lines := strings.Split(box.Value, "\n")
+	if len(lines) <= max {
+		return
+	}
+	tail := lines[len(lines)-max-1:]
+	box.Value = strings.Join(tail, "\n")
 }
