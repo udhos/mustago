@@ -40330,14 +40330,14 @@ $packages["github.com/udhos/mustago"] = (function() {
 		if (ok) {
 			box.BasicHTMLElement.BasicElement.BasicNode.Object.value = $externalize("", $String);
 		}
-		$r = logf("main: mustago version: %s", new sliceType([new $String("0.5")])); /* */ $s = 4; case 4: if($c) { $c = false; $r = $r.$blk(); } if ($r && $r.$blk !== undefined) { break s; }
+		$r = logf("main: mustago version: %s", new sliceType([new $String("0.6")])); /* */ $s = 4; case 4: if($c) { $c = false; $r = $r.$blk(); } if ($r && $r.$blk !== undefined) { break s; }
 		_r$3 = docQuery("#version"); /* */ $s = 5; case 5: if($c) { $c = false; _r$3 = _r$3.$blk(); } if (_r$3 && _r$3.$blk !== undefined) { break s; }
 		ver = _r$3;
 		_tuple$1 = $assertType(ver, ptrType$1, true);
 		v = _tuple$1[0];
 		ok$1 = _tuple$1[1];
 		if (ok$1) {
-			v.BasicHTMLElement.BasicElement.SetInnerHTML("mustago 0.5 - simple golang mustache template evaluation in html");
+			v.BasicHTMLElement.BasicElement.SetInnerHTML("mustago 0.6 - simple golang mustache template evaluation in html");
 		}
 		_r$4 = param.AddEventListener("change", false, listenerParam); /* */ $s = 6; case 6: if($c) { $c = false; _r$4 = _r$4.$blk(); } if (_r$4 && _r$4.$blk !== undefined) { break s; }
 		_r$4;
@@ -40347,6 +40347,7 @@ $packages["github.com/udhos/mustago"] = (function() {
 		_r$6;
 		_r$7 = input.AddEventListener("keyup", false, listenerInput); /* */ $s = 9; case 9: if($c) { $c = false; _r$7 = _r$7.$blk(); } if (_r$7 && _r$7.$blk !== undefined) { break s; }
 		_r$7;
+		$r = updateOutput(); /* */ $s = 10; case 10: if($c) { $c = false; $r = $r.$blk(); } if ($r && $r.$blk !== undefined) { break s; }
 		$s = -1; return;
 		/* */ } return; } if ($f === undefined) { $f = { $blk: main }; } $f.$ptr = $ptr; $f._r = _r; $f._r$1 = _r$1; $f._r$2 = _r$2; $f._r$3 = _r$3; $f._r$4 = _r$4; $f._r$5 = _r$5; $f._r$6 = _r$6; $f._r$7 = _r$7; $f._tuple = _tuple; $f._tuple$1 = _tuple$1; $f.box = box; $f.input = input; $f.logbox = logbox; $f.ok = ok; $f.ok$1 = ok$1; $f.param = param; $f.v = v; $f.ver = ver; $f.$s = $s; $f.$r = $r; return $f;
 	};

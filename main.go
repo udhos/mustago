@@ -10,7 +10,7 @@ import (
 	"honnef.co/go/js/dom"
 )
 
-const version = "0.5"
+const version = "0.6"
 
 func main() {
 
@@ -33,6 +33,8 @@ func main() {
 	input.AddEventListener("change", false, listenerInput)
 	param.AddEventListener("keyup", false, listenerParam)
 	input.AddEventListener("keyup", false, listenerInput)
+
+	updateOutput() // the first update
 }
 
 func listenerParam(ev dom.Event) {
