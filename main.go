@@ -10,7 +10,7 @@ import (
 	"honnef.co/go/js/dom"
 )
 
-const version = "0.3"
+const version = "0.4"
 
 func main() {
 
