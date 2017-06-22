@@ -10,7 +10,7 @@ import (
 	"honnef.co/go/js/dom"
 )
 
-const version = "0.4"
+const version = "0.5"
 
 func main() {
 
@@ -26,7 +26,7 @@ func main() {
 
 	ver := docQuery("#version")
 	if v, ok := ver.(*dom.HTMLSpanElement); ok {
-		v.SetInnerHTML("mustache " + version)
+		v.SetInnerHTML("mustago " + version + " - simple golang mustache template evaluation in html")
 	}
 
 	param.AddEventListener("change", false, listenerParam)

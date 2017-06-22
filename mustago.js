@@ -40330,14 +40330,14 @@ $packages["github.com/udhos/mustago"] = (function() {
 		if (ok) {
 			box.BasicHTMLElement.BasicElement.BasicNode.Object.value = $externalize("", $String);
 		}
-		$r = logf("main: mustago version: %s", new sliceType([new $String("0.4")])); /* */ $s = 4; case 4: if($c) { $c = false; $r = $r.$blk(); } if ($r && $r.$blk !== undefined) { break s; }
+		$r = logf("main: mustago version: %s", new sliceType([new $String("0.5")])); /* */ $s = 4; case 4: if($c) { $c = false; $r = $r.$blk(); } if ($r && $r.$blk !== undefined) { break s; }
 		_r$3 = docQuery("#version"); /* */ $s = 5; case 5: if($c) { $c = false; _r$3 = _r$3.$blk(); } if (_r$3 && _r$3.$blk !== undefined) { break s; }
 		ver = _r$3;
 		_tuple$1 = $assertType(ver, ptrType$1, true);
 		v = _tuple$1[0];
 		ok$1 = _tuple$1[1];
 		if (ok$1) {
-			v.BasicHTMLElement.BasicElement.SetInnerHTML("mustache 0.4");
+			v.BasicHTMLElement.BasicElement.SetInnerHTML("mustago 0.5 - simple golang mustache template evaluation in html");
 		}
 		_r$4 = param.AddEventListener("change", false, listenerParam); /* */ $s = 6; case 6: if($c) { $c = false; _r$4 = _r$4.$blk(); } if (_r$4 && _r$4.$blk !== undefined) { break s; }
 		_r$4;

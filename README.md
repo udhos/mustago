@@ -22,7 +22,7 @@ Run a web server publishing these files:
 Example:
 
     $ go get github.com/udhos/gowebhello
-    $ gowebhello ;# publish current dir as http://localhost:8080/www
+    $ ~/go/bin/gowebhello                ;# publish current dir as http://localhost:8080/www
     Now open http://localhost:8080/www
 
 END
