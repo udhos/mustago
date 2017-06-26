@@ -26,7 +26,7 @@ func main() {
 
 	ver := docQuery("#version")
 	if v, ok := ver.(*dom.HTMLSpanElement); ok {
-		v.SetInnerHTML("mustago " + version + " - simple golang mustache template evaluation in html")
+		v.SetInnerHTML("mustago " + version + ` - simple golang <a href="http://mustache.github.io">mustache</a> template evaluation in html`)
 	}
 
 	param.AddEventListener("change", false, listenerParam)

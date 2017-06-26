@@ -40337,7 +40337,7 @@ $packages["github.com/udhos/mustago"] = (function() {
 		v = _tuple$1[0];
 		ok$1 = _tuple$1[1];
 		if (ok$1) {
-			v.BasicHTMLElement.BasicElement.SetInnerHTML("mustago 0.6 - simple golang mustache template evaluation in html");
+			v.BasicHTMLElement.BasicElement.SetInnerHTML("mustago 0.6 - simple golang <a href=\"http://mustache.github.io\">mustache</a> template evaluation in html");
 		}
 		_r$4 = param.AddEventListener("change", false, listenerParam); /* */ $s = 6; case 6: if($c) { $c = false; _r$4 = _r$4.$blk(); } if (_r$4 && _r$4.$blk !== undefined) { break s; }
 		_r$4;
