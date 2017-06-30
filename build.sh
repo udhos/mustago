@@ -4,6 +4,11 @@
 
 echo GOPATH=$GOPATH
 
+go get honnef.co/go/tools/cmd/unused
+go get honnef.co/go/tools/cmd/gosimple
+go get honnef.co/go/tools/cmd/staticcheck
+go get github.com/golang/lint/golint
+
 go get github.com/gopherjs/gopherjs
 go get github.com/cbroglie/mustache
 go get honnef.co/go/js/dom
@@ -13,9 +18,10 @@ gofmt -s -w main.go
 go tool fix main.go
 go tool vet .
 
-[ -x $GOPATH/bin/gosimple ] && $GOPATH/bin/gosimple main.go
-[ -x $GOPATH/bin/golint ] && $GOPATH/bin/golint main.go
-[ -x $GOPATH/bin/staticcheck ] && $GOPATH/bin/staticcheck main.go
+hash gosimple && gosimple main.go
+hash golint && golint main.go
+hash staticcheck && staticcheck main.go
+hash unused && unused main.go
 
 gopherjs install -v
 

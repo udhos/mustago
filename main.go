@@ -6,17 +6,19 @@ import (
 	"strings"
 
 	"github.com/cbroglie/mustache"
+	"github.com/gopherjs/gopherjs/js"
 	"gopkg.in/yaml.v2"
 	"honnef.co/go/js/dom"
 )
 
-const version = "0.6"
+const version = "0.7"
 
 func main() {
 
 	param := docQuery("#parameters")
 	input := docQuery("#input")
 	logbox := docQuery("#log")
+	button := docQuery("#button-output-copy")
 
 	if box, ok := logbox.(*dom.HTMLTextAreaElement); ok {
 		box.Value = "" // clear log
@@ -33,8 +35,27 @@ func main() {
 	input.AddEventListener("change", false, listenerInput)
 	param.AddEventListener("keyup", false, listenerParam)
 	input.AddEventListener("keyup", false, listenerInput)
+	button.AddEventListener("click", false, buttonOutputCopy)
 
 	updateOutput() // the first update
+}
+
+func buttonOutputCopy(ev dom.Event) {
+
+	output := docQuery("#output")
+
+	o, isTextArea := output.(*dom.HTMLTextAreaElement)
+	if !isTextArea {
+		return
+	}
+
+	logf("buttonOutputCopy: %v", o)
+
+	saveDisabled := o.Disabled
+	o.Disabled = false                                    // force enabled temporarily
+	o.Select()                                            // select text area
+	js.Global.Get("document").Call("execCommand", "copy") // document.execCommand('copy');
+	o.Disabled = saveDisabled
 }
 
 func listenerParam(ev dom.Event) {

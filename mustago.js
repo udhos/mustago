@@ -12619,22 +12619,22 @@ $packages["reflect"] = (function() {
 				if (i[0] < 0 || i[0] > ((tt.len >> 0))) {
 					$panic(new $String("reflect: array index out of range"));
 				}
-				typ[0] = tt.elem;
+				typ$1[0] = tt.elem;
 				fl = (v.flag & 480) >>> 0;
-				fl = (fl | (((typ[0].Kind() >>> 0)))) >>> 0;
-				a[0] = v.ptr;
-				/* */ if (!((((fl & 128) >>> 0) === 0)) && !((typ[0].Kind() === 17)) && !((typ[0].Kind() === 25))) { $s = 7; continue; }
+				fl = (fl | (((typ$1[0].Kind() >>> 0)))) >>> 0;
+				a$1[0] = v.ptr;
+				/* */ if (!((((fl & 128) >>> 0) === 0)) && !((typ$1[0].Kind() === 17)) && !((typ$1[0].Kind() === 25))) { $s = 7; continue; }
 				/* */ $s = 8; continue;
-				/* if (!((((fl & 128) >>> 0) === 0)) && !((typ[0].Kind() === 17)) && !((typ[0].Kind() === 25))) { */ case 7:
-					$s = -1; return new Value.ptr(typ[0], (new (jsType(PtrTo(typ[0])))((function(a, a$1, c, i, typ, typ$1) { return function() {
+				/* if (!((((fl & 128) >>> 0) === 0)) && !((typ$1[0].Kind() === 17)) && !((typ$1[0].Kind() === 25))) { */ case 7:
+					$s = -1; return new Value.ptr(typ$1[0], (new (jsType(PtrTo(typ$1[0])))((function(a, a$1, c, i, typ, typ$1) { return function() {
 						var $ptr;
-						return wrapJsObject(typ[0], a[0][i[0]]);
+						return wrapJsObject(typ$1[0], a$1[0][i[0]]);
 					}; })(a, a$1, c, i, typ, typ$1), (function(a, a$1, c, i, typ, typ$1) { return function(x) {
 						var $ptr, x;
-						a[0][i[0]] = unwrapJsObject(typ[0], x);
+						a$1[0][i[0]] = unwrapJsObject(typ$1[0], x);
 					}; })(a, a$1, c, i, typ, typ$1))), fl);
 				/* } */ case 8:
-				_r = makeValue(typ[0], wrapJsObject(typ[0], a[0][i[0]]), fl); /* */ $s = 9; case 9: if($c) { $c = false; _r = _r.$blk(); } if (_r && _r.$blk !== undefined) { break s; }
+				_r = makeValue(typ$1[0], wrapJsObject(typ$1[0], a$1[0][i[0]]), fl); /* */ $s = 9; case 9: if($c) { $c = false; _r = _r.$blk(); } if (_r && _r.$blk !== undefined) { break s; }
 				$s = -1; return _r;
 			/* } else if (_1 === (23)) { */ case 3:
 				s = $clone(v, Value).object();
@@ -12642,23 +12642,23 @@ $packages["reflect"] = (function() {
 					$panic(new $String("reflect: slice index out of range"));
 				}
 				tt$1 = (v.typ.kindType);
-				typ$1[0] = tt$1.elem;
+				typ[0] = tt$1.elem;
 				fl$1 = (384 | ((v.flag & 96) >>> 0)) >>> 0;
-				fl$1 = (fl$1 | (((typ$1[0].Kind() >>> 0)))) >>> 0;
+				fl$1 = (fl$1 | (((typ[0].Kind() >>> 0)))) >>> 0;
 				i[0] = i[0] + (($parseInt(s.$offset) >> 0)) >> 0;
-				a$1[0] = s.$array;
-				/* */ if (!((((fl$1 & 128) >>> 0) === 0)) && !((typ$1[0].Kind() === 17)) && !((typ$1[0].Kind() === 25))) { $s = 10; continue; }
+				a[0] = s.$array;
+				/* */ if (!((((fl$1 & 128) >>> 0) === 0)) && !((typ[0].Kind() === 17)) && !((typ[0].Kind() === 25))) { $s = 10; continue; }
 				/* */ $s = 11; continue;
-				/* if (!((((fl$1 & 128) >>> 0) === 0)) && !((typ$1[0].Kind() === 17)) && !((typ$1[0].Kind() === 25))) { */ case 10:
-					$s = -1; return new Value.ptr(typ$1[0], (new (jsType(PtrTo(typ$1[0])))((function(a, a$1, c, i, typ, typ$1) { return function() {
+				/* if (!((((fl$1 & 128) >>> 0) === 0)) && !((typ[0].Kind() === 17)) && !((typ[0].Kind() === 25))) { */ case 10:
+					$s = -1; return new Value.ptr(typ[0], (new (jsType(PtrTo(typ[0])))((function(a, a$1, c, i, typ, typ$1) { return function() {
 						var $ptr;
-						return wrapJsObject(typ$1[0], a$1[0][i[0]]);
+						return wrapJsObject(typ[0], a[0][i[0]]);
 					}; })(a, a$1, c, i, typ, typ$1), (function(a, a$1, c, i, typ, typ$1) { return function(x) {
 						var $ptr, x;
-						a$1[0][i[0]] = unwrapJsObject(typ$1[0], x);
+						a[0][i[0]] = unwrapJsObject(typ[0], x);
 					}; })(a, a$1, c, i, typ, typ$1))), fl$1);
 				/* } */ case 11:
-				_r$1 = makeValue(typ$1[0], wrapJsObject(typ$1[0], a$1[0][i[0]]), fl$1); /* */ $s = 12; case 12: if($c) { $c = false; _r$1 = _r$1.$blk(); } if (_r$1 && _r$1.$blk !== undefined) { break s; }
+				_r$1 = makeValue(typ[0], wrapJsObject(typ[0], a[0][i[0]]), fl$1); /* */ $s = 12; case 12: if($c) { $c = false; _r$1 = _r$1.$blk(); } if (_r$1 && _r$1.$blk !== undefined) { break s; }
 				$s = -1; return _r$1;
 			/* } else if (_1 === (24)) { */ case 4:
 				str = (v.ptr).$get();
@@ -40303,9 +40303,10 @@ $packages["log"] = (function() {
 	return $pkg;
 })();
 $packages["github.com/udhos/mustago"] = (function() {
-	var $pkg = {}, $init, fmt, mustache, yaml, dom, log, strings, ptrType, sliceType, ptrType$1, sliceType$1, ptrType$2, main, listenerParam, listenerInput, updateOutput, setOutput, docQuery, logf;
+	var $pkg = {}, $init, fmt, mustache, js, yaml, dom, log, strings, ptrType, sliceType, ptrType$1, sliceType$1, ptrType$2, main, buttonOutputCopy, listenerParam, listenerInput, updateOutput, setOutput, docQuery, logf;
 	fmt = $packages["fmt"];
 	mustache = $packages["github.com/cbroglie/mustache"];
+	js = $packages["github.com/gopherjs/gopherjs/js"];
 	yaml = $packages["gopkg.in/yaml.v2"];
 	dom = $packages["honnef.co/go/js/dom"];
 	log = $packages["log"];
@@ -40316,40 +40317,64 @@ $packages["github.com/udhos/mustago"] = (function() {
 	sliceType$1 = $sliceType($Uint8);
 	ptrType$2 = $ptrType($emptyInterface);
 	main = function() {
-		var $ptr, _r, _r$1, _r$2, _r$3, _r$4, _r$5, _r$6, _r$7, _tuple, _tuple$1, box, input, logbox, ok, ok$1, param, v, ver, $s, $r;
-		/* */ $s = 0; var $f, $c = false; if (this !== undefined && this.$blk !== undefined) { $f = this; $c = true; $ptr = $f.$ptr; _r = $f._r; _r$1 = $f._r$1; _r$2 = $f._r$2; _r$3 = $f._r$3; _r$4 = $f._r$4; _r$5 = $f._r$5; _r$6 = $f._r$6; _r$7 = $f._r$7; _tuple = $f._tuple; _tuple$1 = $f._tuple$1; box = $f.box; input = $f.input; logbox = $f.logbox; ok = $f.ok; ok$1 = $f.ok$1; param = $f.param; v = $f.v; ver = $f.ver; $s = $f.$s; $r = $f.$r; } s: while (true) { switch ($s) { case 0:
+		var $ptr, _r, _r$1, _r$2, _r$3, _r$4, _r$5, _r$6, _r$7, _r$8, _r$9, _tuple, _tuple$1, box, button, input, logbox, ok, ok$1, param, v, ver, $s, $r;
+		/* */ $s = 0; var $f, $c = false; if (this !== undefined && this.$blk !== undefined) { $f = this; $c = true; $ptr = $f.$ptr; _r = $f._r; _r$1 = $f._r$1; _r$2 = $f._r$2; _r$3 = $f._r$3; _r$4 = $f._r$4; _r$5 = $f._r$5; _r$6 = $f._r$6; _r$7 = $f._r$7; _r$8 = $f._r$8; _r$9 = $f._r$9; _tuple = $f._tuple; _tuple$1 = $f._tuple$1; box = $f.box; button = $f.button; input = $f.input; logbox = $f.logbox; ok = $f.ok; ok$1 = $f.ok$1; param = $f.param; v = $f.v; ver = $f.ver; $s = $f.$s; $r = $f.$r; } s: while (true) { switch ($s) { case 0:
 		_r = docQuery("#parameters"); /* */ $s = 1; case 1: if($c) { $c = false; _r = _r.$blk(); } if (_r && _r.$blk !== undefined) { break s; }
 		param = _r;
 		_r$1 = docQuery("#input"); /* */ $s = 2; case 2: if($c) { $c = false; _r$1 = _r$1.$blk(); } if (_r$1 && _r$1.$blk !== undefined) { break s; }
 		input = _r$1;
 		_r$2 = docQuery("#log"); /* */ $s = 3; case 3: if($c) { $c = false; _r$2 = _r$2.$blk(); } if (_r$2 && _r$2.$blk !== undefined) { break s; }
 		logbox = _r$2;
+		_r$3 = docQuery("#button-output-copy"); /* */ $s = 4; case 4: if($c) { $c = false; _r$3 = _r$3.$blk(); } if (_r$3 && _r$3.$blk !== undefined) { break s; }
+		button = _r$3;
 		_tuple = $assertType(logbox, ptrType, true);
 		box = _tuple[0];
 		ok = _tuple[1];
 		if (ok) {
 			box.BasicHTMLElement.BasicElement.BasicNode.Object.value = $externalize("", $String);
 		}
-		$r = logf("main: mustago version: %s", new sliceType([new $String("0.6")])); /* */ $s = 4; case 4: if($c) { $c = false; $r = $r.$blk(); } if ($r && $r.$blk !== undefined) { break s; }
-		_r$3 = docQuery("#version"); /* */ $s = 5; case 5: if($c) { $c = false; _r$3 = _r$3.$blk(); } if (_r$3 && _r$3.$blk !== undefined) { break s; }
-		ver = _r$3;
+		$r = logf("main: mustago version: %s", new sliceType([new $String("0.7")])); /* */ $s = 5; case 5: if($c) { $c = false; $r = $r.$blk(); } if ($r && $r.$blk !== undefined) { break s; }
+		_r$4 = docQuery("#version"); /* */ $s = 6; case 6: if($c) { $c = false; _r$4 = _r$4.$blk(); } if (_r$4 && _r$4.$blk !== undefined) { break s; }
+		ver = _r$4;
 		_tuple$1 = $assertType(ver, ptrType$1, true);
 		v = _tuple$1[0];
 		ok$1 = _tuple$1[1];
 		if (ok$1) {
-			v.BasicHTMLElement.BasicElement.SetInnerHTML("mustago 0.6 - simple golang <a href=\"http://mustache.github.io\">mustache</a> template evaluation in html");
+			v.BasicHTMLElement.BasicElement.SetInnerHTML("mustago 0.7 - simple golang <a href=\"http://mustache.github.io\">mustache</a> template evaluation in html");
 		}
-		_r$4 = param.AddEventListener("change", false, listenerParam); /* */ $s = 6; case 6: if($c) { $c = false; _r$4 = _r$4.$blk(); } if (_r$4 && _r$4.$blk !== undefined) { break s; }
-		_r$4;
-		_r$5 = input.AddEventListener("change", false, listenerInput); /* */ $s = 7; case 7: if($c) { $c = false; _r$5 = _r$5.$blk(); } if (_r$5 && _r$5.$blk !== undefined) { break s; }
+		_r$5 = param.AddEventListener("change", false, listenerParam); /* */ $s = 7; case 7: if($c) { $c = false; _r$5 = _r$5.$blk(); } if (_r$5 && _r$5.$blk !== undefined) { break s; }
 		_r$5;
-		_r$6 = param.AddEventListener("keyup", false, listenerParam); /* */ $s = 8; case 8: if($c) { $c = false; _r$6 = _r$6.$blk(); } if (_r$6 && _r$6.$blk !== undefined) { break s; }
+		_r$6 = input.AddEventListener("change", false, listenerInput); /* */ $s = 8; case 8: if($c) { $c = false; _r$6 = _r$6.$blk(); } if (_r$6 && _r$6.$blk !== undefined) { break s; }
 		_r$6;
-		_r$7 = input.AddEventListener("keyup", false, listenerInput); /* */ $s = 9; case 9: if($c) { $c = false; _r$7 = _r$7.$blk(); } if (_r$7 && _r$7.$blk !== undefined) { break s; }
+		_r$7 = param.AddEventListener("keyup", false, listenerParam); /* */ $s = 9; case 9: if($c) { $c = false; _r$7 = _r$7.$blk(); } if (_r$7 && _r$7.$blk !== undefined) { break s; }
 		_r$7;
-		$r = updateOutput(); /* */ $s = 10; case 10: if($c) { $c = false; $r = $r.$blk(); } if ($r && $r.$blk !== undefined) { break s; }
+		_r$8 = input.AddEventListener("keyup", false, listenerInput); /* */ $s = 10; case 10: if($c) { $c = false; _r$8 = _r$8.$blk(); } if (_r$8 && _r$8.$blk !== undefined) { break s; }
+		_r$8;
+		_r$9 = button.AddEventListener("click", false, buttonOutputCopy); /* */ $s = 11; case 11: if($c) { $c = false; _r$9 = _r$9.$blk(); } if (_r$9 && _r$9.$blk !== undefined) { break s; }
+		_r$9;
+		$r = updateOutput(); /* */ $s = 12; case 12: if($c) { $c = false; $r = $r.$blk(); } if ($r && $r.$blk !== undefined) { break s; }
 		$s = -1; return;
-		/* */ } return; } if ($f === undefined) { $f = { $blk: main }; } $f.$ptr = $ptr; $f._r = _r; $f._r$1 = _r$1; $f._r$2 = _r$2; $f._r$3 = _r$3; $f._r$4 = _r$4; $f._r$5 = _r$5; $f._r$6 = _r$6; $f._r$7 = _r$7; $f._tuple = _tuple; $f._tuple$1 = _tuple$1; $f.box = box; $f.input = input; $f.logbox = logbox; $f.ok = ok; $f.ok$1 = ok$1; $f.param = param; $f.v = v; $f.ver = ver; $f.$s = $s; $f.$r = $r; return $f;
+		/* */ } return; } if ($f === undefined) { $f = { $blk: main }; } $f.$ptr = $ptr; $f._r = _r; $f._r$1 = _r$1; $f._r$2 = _r$2; $f._r$3 = _r$3; $f._r$4 = _r$4; $f._r$5 = _r$5; $f._r$6 = _r$6; $f._r$7 = _r$7; $f._r$8 = _r$8; $f._r$9 = _r$9; $f._tuple = _tuple; $f._tuple$1 = _tuple$1; $f.box = box; $f.button = button; $f.input = input; $f.logbox = logbox; $f.ok = ok; $f.ok$1 = ok$1; $f.param = param; $f.v = v; $f.ver = ver; $f.$s = $s; $f.$r = $r; return $f;
+	};
+	buttonOutputCopy = function(ev) {
+		var $ptr, _r, _tuple, ev, isTextArea, o, output, saveDisabled, $s, $r;
+		/* */ $s = 0; var $f, $c = false; if (this !== undefined && this.$blk !== undefined) { $f = this; $c = true; $ptr = $f.$ptr; _r = $f._r; _tuple = $f._tuple; ev = $f.ev; isTextArea = $f.isTextArea; o = $f.o; output = $f.output; saveDisabled = $f.saveDisabled; $s = $f.$s; $r = $f.$r; } s: while (true) { switch ($s) { case 0:
+		_r = docQuery("#output"); /* */ $s = 1; case 1: if($c) { $c = false; _r = _r.$blk(); } if (_r && _r.$blk !== undefined) { break s; }
+		output = _r;
+		_tuple = $assertType(output, ptrType, true);
+		o = _tuple[0];
+		isTextArea = _tuple[1];
+		if (!isTextArea) {
+			$s = -1; return;
+		}
+		$r = logf("buttonOutputCopy: %v", new sliceType([o])); /* */ $s = 2; case 2: if($c) { $c = false; $r = $r.$blk(); } if ($r && $r.$blk !== undefined) { break s; }
+		saveDisabled = !!(o.BasicHTMLElement.BasicElement.BasicNode.Object.disabled);
+		o.BasicHTMLElement.BasicElement.BasicNode.Object.disabled = $externalize(false, $Bool);
+		o.Select();
+		$global.document.execCommand($externalize("copy", $String));
+		o.BasicHTMLElement.BasicElement.BasicNode.Object.disabled = $externalize(saveDisabled, $Bool);
+		$s = -1; return;
+		/* */ } return; } if ($f === undefined) { $f = { $blk: buttonOutputCopy }; } $f.$ptr = $ptr; $f._r = _r; $f._tuple = _tuple; $f.ev = ev; $f.isTextArea = isTextArea; $f.o = o; $f.output = output; $f.saveDisabled = saveDisabled; $f.$s = $s; $f.$r = $r; return $f;
 	};
 	listenerParam = function(ev) {
 		var $ptr, _r, _tuple, ev, ok, p, t, $s, $r;
@@ -40492,16 +40517,17 @@ $packages["github.com/udhos/mustago"] = (function() {
 		/* */ var $f, $c = false, $s = 0, $r; if (this !== undefined && this.$blk !== undefined) { $f = this; $c = true; $s = $f.$s; $r = $f.$r; } s: while (true) { switch ($s) { case 0:
 		$r = fmt.$init(); /* */ $s = 1; case 1: if($c) { $c = false; $r = $r.$blk(); } if ($r && $r.$blk !== undefined) { break s; }
 		$r = mustache.$init(); /* */ $s = 2; case 2: if($c) { $c = false; $r = $r.$blk(); } if ($r && $r.$blk !== undefined) { break s; }
-		$r = yaml.$init(); /* */ $s = 3; case 3: if($c) { $c = false; $r = $r.$blk(); } if ($r && $r.$blk !== undefined) { break s; }
-		$r = dom.$init(); /* */ $s = 4; case 4: if($c) { $c = false; $r = $r.$blk(); } if ($r && $r.$blk !== undefined) { break s; }
-		$r = log.$init(); /* */ $s = 5; case 5: if($c) { $c = false; $r = $r.$blk(); } if ($r && $r.$blk !== undefined) { break s; }
-		$r = strings.$init(); /* */ $s = 6; case 6: if($c) { $c = false; $r = $r.$blk(); } if ($r && $r.$blk !== undefined) { break s; }
-		/* */ if ($pkg === $mainPkg) { $s = 7; continue; }
-		/* */ $s = 8; continue;
-		/* if ($pkg === $mainPkg) { */ case 7:
-			$r = main(); /* */ $s = 9; case 9: if($c) { $c = false; $r = $r.$blk(); } if ($r && $r.$blk !== undefined) { break s; }
+		$r = js.$init(); /* */ $s = 3; case 3: if($c) { $c = false; $r = $r.$blk(); } if ($r && $r.$blk !== undefined) { break s; }
+		$r = yaml.$init(); /* */ $s = 4; case 4: if($c) { $c = false; $r = $r.$blk(); } if ($r && $r.$blk !== undefined) { break s; }
+		$r = dom.$init(); /* */ $s = 5; case 5: if($c) { $c = false; $r = $r.$blk(); } if ($r && $r.$blk !== undefined) { break s; }
+		$r = log.$init(); /* */ $s = 6; case 6: if($c) { $c = false; $r = $r.$blk(); } if ($r && $r.$blk !== undefined) { break s; }
+		$r = strings.$init(); /* */ $s = 7; case 7: if($c) { $c = false; $r = $r.$blk(); } if ($r && $r.$blk !== undefined) { break s; }
+		/* */ if ($pkg === $mainPkg) { $s = 8; continue; }
+		/* */ $s = 9; continue;
+		/* if ($pkg === $mainPkg) { */ case 8:
+			$r = main(); /* */ $s = 10; case 10: if($c) { $c = false; $r = $r.$blk(); } if ($r && $r.$blk !== undefined) { break s; }
 			$mainFinished = true;
-		/* } */ case 8:
+		/* } */ case 9:
 		/* */ } return; } if ($f === undefined) { $f = { $blk: $init }; } $f.$s = $s; $f.$r = $r; return $f;
 	};
 	$pkg.$init = $init;
