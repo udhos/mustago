@@ -11,7 +11,7 @@ import (
 	"honnef.co/go/js/dom"
 )
 
-const version = "0.7"
+const version = "0.8"
 
 func main() {
 
@@ -51,11 +51,8 @@ func buttonOutputCopy(ev dom.Event) {
 
 	logf("buttonOutputCopy: %v", o)
 
-	saveDisabled := o.Disabled
-	o.Disabled = false                                    // force enabled temporarily
 	o.Select()                                            // select text area
 	js.Global.Get("document").Call("execCommand", "copy") // document.execCommand('copy');
-	o.Disabled = saveDisabled
 }
 
 func listenerParam(ev dom.Event) {

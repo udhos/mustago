@@ -40333,14 +40333,14 @@ $packages["github.com/udhos/mustago"] = (function() {
 		if (ok) {
 			box.BasicHTMLElement.BasicElement.BasicNode.Object.value = $externalize("", $String);
 		}
-		$r = logf("main: mustago version: %s", new sliceType([new $String("0.7")])); /* */ $s = 5; case 5: if($c) { $c = false; $r = $r.$blk(); } if ($r && $r.$blk !== undefined) { break s; }
+		$r = logf("main: mustago version: %s", new sliceType([new $String("0.8")])); /* */ $s = 5; case 5: if($c) { $c = false; $r = $r.$blk(); } if ($r && $r.$blk !== undefined) { break s; }
 		_r$4 = docQuery("#version"); /* */ $s = 6; case 6: if($c) { $c = false; _r$4 = _r$4.$blk(); } if (_r$4 && _r$4.$blk !== undefined) { break s; }
 		ver = _r$4;
 		_tuple$1 = $assertType(ver, ptrType$1, true);
 		v = _tuple$1[0];
 		ok$1 = _tuple$1[1];
 		if (ok$1) {
-			v.BasicHTMLElement.BasicElement.SetInnerHTML("mustago 0.7 - simple golang <a href=\"http://mustache.github.io\">mustache</a> template evaluation in html");
+			v.BasicHTMLElement.BasicElement.SetInnerHTML("mustago 0.8 - simple golang <a href=\"http://mustache.github.io\">mustache</a> template evaluation in html");
 		}
 		_r$5 = param.AddEventListener("change", false, listenerParam); /* */ $s = 7; case 7: if($c) { $c = false; _r$5 = _r$5.$blk(); } if (_r$5 && _r$5.$blk !== undefined) { break s; }
 		_r$5;
@@ -40357,8 +40357,8 @@ $packages["github.com/udhos/mustago"] = (function() {
 		/* */ } return; } if ($f === undefined) { $f = { $blk: main }; } $f.$ptr = $ptr; $f._r = _r; $f._r$1 = _r$1; $f._r$2 = _r$2; $f._r$3 = _r$3; $f._r$4 = _r$4; $f._r$5 = _r$5; $f._r$6 = _r$6; $f._r$7 = _r$7; $f._r$8 = _r$8; $f._r$9 = _r$9; $f._tuple = _tuple; $f._tuple$1 = _tuple$1; $f.box = box; $f.button = button; $f.input = input; $f.logbox = logbox; $f.ok = ok; $f.ok$1 = ok$1; $f.param = param; $f.v = v; $f.ver = ver; $f.$s = $s; $f.$r = $r; return $f;
 	};
 	buttonOutputCopy = function(ev) {
-		var $ptr, _r, _tuple, ev, isTextArea, o, output, saveDisabled, $s, $r;
-		/* */ $s = 0; var $f, $c = false; if (this !== undefined && this.$blk !== undefined) { $f = this; $c = true; $ptr = $f.$ptr; _r = $f._r; _tuple = $f._tuple; ev = $f.ev; isTextArea = $f.isTextArea; o = $f.o; output = $f.output; saveDisabled = $f.saveDisabled; $s = $f.$s; $r = $f.$r; } s: while (true) { switch ($s) { case 0:
+		var $ptr, _r, _tuple, ev, isTextArea, o, output, $s, $r;
+		/* */ $s = 0; var $f, $c = false; if (this !== undefined && this.$blk !== undefined) { $f = this; $c = true; $ptr = $f.$ptr; _r = $f._r; _tuple = $f._tuple; ev = $f.ev; isTextArea = $f.isTextArea; o = $f.o; output = $f.output; $s = $f.$s; $r = $f.$r; } s: while (true) { switch ($s) { case 0:
 		_r = docQuery("#output"); /* */ $s = 1; case 1: if($c) { $c = false; _r = _r.$blk(); } if (_r && _r.$blk !== undefined) { break s; }
 		output = _r;
 		_tuple = $assertType(output, ptrType, true);
@@ -40368,13 +40368,10 @@ $packages["github.com/udhos/mustago"] = (function() {
 			$s = -1; return;
 		}
 		$r = logf("buttonOutputCopy: %v", new sliceType([o])); /* */ $s = 2; case 2: if($c) { $c = false; $r = $r.$blk(); } if ($r && $r.$blk !== undefined) { break s; }
-		saveDisabled = !!(o.BasicHTMLElement.BasicElement.BasicNode.Object.disabled);
-		o.BasicHTMLElement.BasicElement.BasicNode.Object.disabled = $externalize(false, $Bool);
 		o.Select();
 		$global.document.execCommand($externalize("copy", $String));
-		o.BasicHTMLElement.BasicElement.BasicNode.Object.disabled = $externalize(saveDisabled, $Bool);
 		$s = -1; return;
-		/* */ } return; } if ($f === undefined) { $f = { $blk: buttonOutputCopy }; } $f.$ptr = $ptr; $f._r = _r; $f._tuple = _tuple; $f.ev = ev; $f.isTextArea = isTextArea; $f.o = o; $f.output = output; $f.saveDisabled = saveDisabled; $f.$s = $s; $f.$r = $r; return $f;
+		/* */ } return; } if ($f === undefined) { $f = { $blk: buttonOutputCopy }; } $f.$ptr = $ptr; $f._r = _r; $f._tuple = _tuple; $f.ev = ev; $f.isTextArea = isTextArea; $f.o = o; $f.output = output; $f.$s = $s; $f.$r = $r; return $f;
 	};
 	listenerParam = function(ev) {
 		var $ptr, _r, _tuple, ev, ok, p, t, $s, $r;
