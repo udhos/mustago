@@ -5,8 +5,9 @@ import (
 	"log"
 	"strings"
 
-	"github.com/cbroglie/mustache"
+	//"github.com/cbroglie/mustache"
 	"github.com/gopherjs/gopherjs/js"
+	"github.com/udhos/mustache"
 	"gopkg.in/yaml.v2"
 	"honnef.co/go/js/dom"
 )
@@ -106,8 +107,9 @@ func updateOutput() {
 		return
 	}
 
+	disableHTMLEscape := true
 	var errRender error
-	result, errRender = mustache.Render(i.Value, doc)
+	result, errRender = mustache.RenderRaw(i.Value, disableHTMLEscape, doc)
 	if errRender != nil {
 		msg := fmt.Errorf("updateOutput: mustache render error; %v", errRender)
 		logf("%s", msg)
