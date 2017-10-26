@@ -44346,7 +44346,7 @@ $packages["log"] = (function() {
 	return $pkg;
 })();
 $packages["github.com/udhos/mustago"] = (function() {
-	var $pkg = {}, $init, fmt, js, mustache, yaml, dom, log, strings, ptrType, sliceType, ptrType$1, sliceType$1, ptrType$2, main, buttonOutputCopy, listenerParam, listenerInput, updateOutput, setOutput, docQuery, logf;
+	var $pkg = {}, $init, fmt, js, mustache, yaml, dom, log, strings, ptrType, sliceType, ptrType$1, ptrType$2, sliceType$1, ptrType$3, main, toggleEscaping, buttonOutputCopy, listenerParam, listenerInput, updateOutput, setOutput, docQuery, logf;
 	fmt = $packages["fmt"];
 	js = $packages["github.com/gopherjs/gopherjs/js"];
 	mustache = $packages["github.com/udhos/mustache"];
@@ -44357,11 +44357,12 @@ $packages["github.com/udhos/mustago"] = (function() {
 	ptrType = $ptrType(dom.HTMLTextAreaElement);
 	sliceType = $sliceType($emptyInterface);
 	ptrType$1 = $ptrType(dom.HTMLSpanElement);
+	ptrType$2 = $ptrType(dom.HTMLInputElement);
 	sliceType$1 = $sliceType($Uint8);
-	ptrType$2 = $ptrType($emptyInterface);
+	ptrType$3 = $ptrType($emptyInterface);
 	main = function() {
-		var _r, _r$1, _r$2, _r$3, _r$4, _r$5, _r$6, _r$7, _r$8, _r$9, _tuple, _tuple$1, box, button, input, logbox, ok, ok$1, param, v, ver, $s, $r;
-		/* */ $s = 0; var $f, $c = false; if (this !== undefined && this.$blk !== undefined) { $f = this; $c = true; _r = $f._r; _r$1 = $f._r$1; _r$2 = $f._r$2; _r$3 = $f._r$3; _r$4 = $f._r$4; _r$5 = $f._r$5; _r$6 = $f._r$6; _r$7 = $f._r$7; _r$8 = $f._r$8; _r$9 = $f._r$9; _tuple = $f._tuple; _tuple$1 = $f._tuple$1; box = $f.box; button = $f.button; input = $f.input; logbox = $f.logbox; ok = $f.ok; ok$1 = $f.ok$1; param = $f.param; v = $f.v; ver = $f.ver; $s = $f.$s; $r = $f.$r; } s: while (true) { switch ($s) { case 0:
+		var _r, _r$1, _r$10, _r$11, _r$2, _r$3, _r$4, _r$5, _r$6, _r$7, _r$8, _r$9, _tuple, _tuple$1, box, button, checkEscaping, input, logbox, ok, ok$1, param, v, ver, $s, $r;
+		/* */ $s = 0; var $f, $c = false; if (this !== undefined && this.$blk !== undefined) { $f = this; $c = true; _r = $f._r; _r$1 = $f._r$1; _r$10 = $f._r$10; _r$11 = $f._r$11; _r$2 = $f._r$2; _r$3 = $f._r$3; _r$4 = $f._r$4; _r$5 = $f._r$5; _r$6 = $f._r$6; _r$7 = $f._r$7; _r$8 = $f._r$8; _r$9 = $f._r$9; _tuple = $f._tuple; _tuple$1 = $f._tuple$1; box = $f.box; button = $f.button; checkEscaping = $f.checkEscaping; input = $f.input; logbox = $f.logbox; ok = $f.ok; ok$1 = $f.ok$1; param = $f.param; v = $f.v; ver = $f.ver; $s = $f.$s; $r = $f.$r; } s: while (true) { switch ($s) { case 0:
 		_r = docQuery("#parameters"); /* */ $s = 1; case 1: if($c) { $c = false; _r = _r.$blk(); } if (_r && _r.$blk !== undefined) { break s; }
 		param = _r;
 		_r$1 = docQuery("#input"); /* */ $s = 2; case 2: if($c) { $c = false; _r$1 = _r$1.$blk(); } if (_r$1 && _r$1.$blk !== undefined) { break s; }
@@ -44370,34 +44371,54 @@ $packages["github.com/udhos/mustago"] = (function() {
 		logbox = _r$2;
 		_r$3 = docQuery("#button-output-copy"); /* */ $s = 4; case 4: if($c) { $c = false; _r$3 = _r$3.$blk(); } if (_r$3 && _r$3.$blk !== undefined) { break s; }
 		button = _r$3;
+		_r$4 = docQuery("#escaping"); /* */ $s = 5; case 5: if($c) { $c = false; _r$4 = _r$4.$blk(); } if (_r$4 && _r$4.$blk !== undefined) { break s; }
+		checkEscaping = _r$4;
 		_tuple = $assertType(logbox, ptrType, true);
 		box = _tuple[0];
 		ok = _tuple[1];
 		if (ok) {
 			box.BasicHTMLElement.BasicElement.BasicNode.Object.value = $externalize("", $String);
 		}
-		$r = logf("main: mustago version: %s", new sliceType([new $String("0.8")])); /* */ $s = 5; case 5: if($c) { $c = false; $r = $r.$blk(); } if ($r && $r.$blk !== undefined) { break s; }
-		_r$4 = docQuery("#version"); /* */ $s = 6; case 6: if($c) { $c = false; _r$4 = _r$4.$blk(); } if (_r$4 && _r$4.$blk !== undefined) { break s; }
-		ver = _r$4;
+		$r = logf("main: mustago version: %s", new sliceType([new $String("0.9")])); /* */ $s = 6; case 6: if($c) { $c = false; $r = $r.$blk(); } if ($r && $r.$blk !== undefined) { break s; }
+		_r$5 = docQuery("#version"); /* */ $s = 7; case 7: if($c) { $c = false; _r$5 = _r$5.$blk(); } if (_r$5 && _r$5.$blk !== undefined) { break s; }
+		ver = _r$5;
 		_tuple$1 = $assertType(ver, ptrType$1, true);
 		v = _tuple$1[0];
 		ok$1 = _tuple$1[1];
 		if (ok$1) {
-			v.BasicHTMLElement.BasicElement.SetInnerHTML("mustago 0.8 - simple golang <a href=\"http://mustache.github.io\">mustache</a> template evaluation in html");
+			v.BasicHTMLElement.BasicElement.SetInnerHTML("mustago 0.9 - simple golang <a href=\"http://mustache.github.io\">mustache</a> template evaluation in html");
 		}
-		_r$5 = param.AddEventListener("change", false, listenerParam); /* */ $s = 7; case 7: if($c) { $c = false; _r$5 = _r$5.$blk(); } if (_r$5 && _r$5.$blk !== undefined) { break s; }
-		_r$5;
-		_r$6 = input.AddEventListener("change", false, listenerInput); /* */ $s = 8; case 8: if($c) { $c = false; _r$6 = _r$6.$blk(); } if (_r$6 && _r$6.$blk !== undefined) { break s; }
+		_r$6 = param.AddEventListener("change", false, listenerParam); /* */ $s = 8; case 8: if($c) { $c = false; _r$6 = _r$6.$blk(); } if (_r$6 && _r$6.$blk !== undefined) { break s; }
 		_r$6;
-		_r$7 = param.AddEventListener("keyup", false, listenerParam); /* */ $s = 9; case 9: if($c) { $c = false; _r$7 = _r$7.$blk(); } if (_r$7 && _r$7.$blk !== undefined) { break s; }
+		_r$7 = input.AddEventListener("change", false, listenerInput); /* */ $s = 9; case 9: if($c) { $c = false; _r$7 = _r$7.$blk(); } if (_r$7 && _r$7.$blk !== undefined) { break s; }
 		_r$7;
-		_r$8 = input.AddEventListener("keyup", false, listenerInput); /* */ $s = 10; case 10: if($c) { $c = false; _r$8 = _r$8.$blk(); } if (_r$8 && _r$8.$blk !== undefined) { break s; }
+		_r$8 = param.AddEventListener("keyup", false, listenerParam); /* */ $s = 10; case 10: if($c) { $c = false; _r$8 = _r$8.$blk(); } if (_r$8 && _r$8.$blk !== undefined) { break s; }
 		_r$8;
-		_r$9 = button.AddEventListener("click", false, buttonOutputCopy); /* */ $s = 11; case 11: if($c) { $c = false; _r$9 = _r$9.$blk(); } if (_r$9 && _r$9.$blk !== undefined) { break s; }
+		_r$9 = input.AddEventListener("keyup", false, listenerInput); /* */ $s = 11; case 11: if($c) { $c = false; _r$9 = _r$9.$blk(); } if (_r$9 && _r$9.$blk !== undefined) { break s; }
 		_r$9;
-		$r = updateOutput(); /* */ $s = 12; case 12: if($c) { $c = false; $r = $r.$blk(); } if ($r && $r.$blk !== undefined) { break s; }
+		_r$10 = button.AddEventListener("click", false, buttonOutputCopy); /* */ $s = 12; case 12: if($c) { $c = false; _r$10 = _r$10.$blk(); } if (_r$10 && _r$10.$blk !== undefined) { break s; }
+		_r$10;
+		_r$11 = checkEscaping.AddEventListener("change", false, toggleEscaping); /* */ $s = 13; case 13: if($c) { $c = false; _r$11 = _r$11.$blk(); } if (_r$11 && _r$11.$blk !== undefined) { break s; }
+		_r$11;
+		$r = updateOutput(); /* */ $s = 14; case 14: if($c) { $c = false; $r = $r.$blk(); } if ($r && $r.$blk !== undefined) { break s; }
 		$s = -1; return;
-		/* */ } return; } if ($f === undefined) { $f = { $blk: main }; } $f._r = _r; $f._r$1 = _r$1; $f._r$2 = _r$2; $f._r$3 = _r$3; $f._r$4 = _r$4; $f._r$5 = _r$5; $f._r$6 = _r$6; $f._r$7 = _r$7; $f._r$8 = _r$8; $f._r$9 = _r$9; $f._tuple = _tuple; $f._tuple$1 = _tuple$1; $f.box = box; $f.button = button; $f.input = input; $f.logbox = logbox; $f.ok = ok; $f.ok$1 = ok$1; $f.param = param; $f.v = v; $f.ver = ver; $f.$s = $s; $f.$r = $r; return $f;
+		/* */ } return; } if ($f === undefined) { $f = { $blk: main }; } $f._r = _r; $f._r$1 = _r$1; $f._r$10 = _r$10; $f._r$11 = _r$11; $f._r$2 = _r$2; $f._r$3 = _r$3; $f._r$4 = _r$4; $f._r$5 = _r$5; $f._r$6 = _r$6; $f._r$7 = _r$7; $f._r$8 = _r$8; $f._r$9 = _r$9; $f._tuple = _tuple; $f._tuple$1 = _tuple$1; $f.box = box; $f.button = button; $f.checkEscaping = checkEscaping; $f.input = input; $f.logbox = logbox; $f.ok = ok; $f.ok$1 = ok$1; $f.param = param; $f.v = v; $f.ver = ver; $f.$s = $s; $f.$r = $r; return $f;
+	};
+	toggleEscaping = function(ev) {
+		var _r, _tuple, escaping, ev, i, isInput, $s, $r;
+		/* */ $s = 0; var $f, $c = false; if (this !== undefined && this.$blk !== undefined) { $f = this; $c = true; _r = $f._r; _tuple = $f._tuple; escaping = $f.escaping; ev = $f.ev; i = $f.i; isInput = $f.isInput; $s = $f.$s; $r = $f.$r; } s: while (true) { switch ($s) { case 0:
+		_r = docQuery("#escaping"); /* */ $s = 1; case 1: if($c) { $c = false; _r = _r.$blk(); } if (_r && _r.$blk !== undefined) { break s; }
+		escaping = _r;
+		_tuple = $assertType(escaping, ptrType$2, true);
+		i = _tuple[0];
+		isInput = _tuple[1];
+		if (!isInput) {
+			$s = -1; return;
+		}
+		$r = logf("toggleEscaping: %v checked=%v", new sliceType([i, new $Bool(!!(i.BasicHTMLElement.BasicElement.BasicNode.Object.checked))])); /* */ $s = 2; case 2: if($c) { $c = false; $r = $r.$blk(); } if ($r && $r.$blk !== undefined) { break s; }
+		$r = updateOutput(); /* */ $s = 3; case 3: if($c) { $c = false; $r = $r.$blk(); } if ($r && $r.$blk !== undefined) { break s; }
+		$s = -1; return;
+		/* */ } return; } if ($f === undefined) { $f = { $blk: toggleEscaping }; } $f._r = _r; $f._tuple = _tuple; $f.escaping = escaping; $f.ev = ev; $f.i = i; $f.isInput = isInput; $f.$s = $s; $f.$r = $r; return $f;
 	};
 	buttonOutputCopy = function(ev) {
 		var _r, _tuple, ev, isTextArea, o, output, $s, $r;
@@ -44449,8 +44470,8 @@ $packages["github.com/udhos/mustago"] = (function() {
 		/* */ } return; } if ($f === undefined) { $f = { $blk: listenerInput }; } $f._r = _r; $f._tuple = _tuple; $f.ev = ev; $f.i = i; $f.ok = ok; $f.t = t; $f.$s = $s; $f.$r = $r; return $f;
 	};
 	updateOutput = function() {
-		var _r, _r$1, _r$2, _r$3, _r$4, _r$5, _r$6, _r$7, _r$8, _tuple, _tuple$1, _tuple$2, _tuple$3, buf, disableHTMLEscape, doc, errParse, errRender, i, input, isInput, isOutput, isParam, msg, msg$1, o, output, p, param, result, $s, $r;
-		/* */ $s = 0; var $f, $c = false; if (this !== undefined && this.$blk !== undefined) { $f = this; $c = true; _r = $f._r; _r$1 = $f._r$1; _r$2 = $f._r$2; _r$3 = $f._r$3; _r$4 = $f._r$4; _r$5 = $f._r$5; _r$6 = $f._r$6; _r$7 = $f._r$7; _r$8 = $f._r$8; _tuple = $f._tuple; _tuple$1 = $f._tuple$1; _tuple$2 = $f._tuple$2; _tuple$3 = $f._tuple$3; buf = $f.buf; disableHTMLEscape = $f.disableHTMLEscape; doc = $f.doc; errParse = $f.errParse; errRender = $f.errRender; i = $f.i; input = $f.input; isInput = $f.isInput; isOutput = $f.isOutput; isParam = $f.isParam; msg = $f.msg; msg$1 = $f.msg$1; o = $f.o; output = $f.output; p = $f.p; param = $f.param; result = $f.result; $s = $f.$s; $r = $f.$r; } s: while (true) { switch ($s) { case 0:
+		var _r, _r$1, _r$2, _r$3, _r$4, _r$5, _r$6, _r$7, _r$8, _r$9, _tuple, _tuple$1, _tuple$2, _tuple$3, _tuple$4, buf, disableHTMLEscape, doc, e, errParse, errRender, escaping, i, input, isInput, isOutput, isParam, msg, msg$1, o, output, p, param, result, $s, $r;
+		/* */ $s = 0; var $f, $c = false; if (this !== undefined && this.$blk !== undefined) { $f = this; $c = true; _r = $f._r; _r$1 = $f._r$1; _r$2 = $f._r$2; _r$3 = $f._r$3; _r$4 = $f._r$4; _r$5 = $f._r$5; _r$6 = $f._r$6; _r$7 = $f._r$7; _r$8 = $f._r$8; _r$9 = $f._r$9; _tuple = $f._tuple; _tuple$1 = $f._tuple$1; _tuple$2 = $f._tuple$2; _tuple$3 = $f._tuple$3; _tuple$4 = $f._tuple$4; buf = $f.buf; disableHTMLEscape = $f.disableHTMLEscape; doc = $f.doc; e = $f.e; errParse = $f.errParse; errRender = $f.errRender; escaping = $f.escaping; i = $f.i; input = $f.input; isInput = $f.isInput; isOutput = $f.isOutput; isParam = $f.isParam; msg = $f.msg; msg$1 = $f.msg$1; o = $f.o; output = $f.output; p = $f.p; param = $f.param; result = $f.result; $s = $f.$s; $r = $f.$r; } s: while (true) { switch ($s) { case 0:
 		doc = [doc];
 		_r = docQuery("#parameters"); /* */ $s = 1; case 1: if($c) { $c = false; _r = _r.$blk(); } if (_r && _r.$blk !== undefined) { break s; }
 		param = _r;
@@ -44476,40 +44497,48 @@ $packages["github.com/udhos/mustago"] = (function() {
 		if (!isOutput) {
 			$s = -1; return;
 		}
+		_r$3 = docQuery("#escaping"); /* */ $s = 4; case 4: if($c) { $c = false; _r$3 = _r$3.$blk(); } if (_r$3 && _r$3.$blk !== undefined) { break s; }
+		escaping = _r$3;
+		_tuple$3 = $assertType(escaping, ptrType$2, true);
+		e = _tuple$3[0];
+		isInput = _tuple$3[1];
+		if (!isInput) {
+			$s = -1; return;
+		}
+		disableHTMLEscape = !!!(e.BasicHTMLElement.BasicElement.BasicNode.Object.checked);
 		result = "";
 		buf = (new sliceType$1($stringToBytes($internalize(p.BasicHTMLElement.BasicElement.BasicNode.Object.value, $String))));
 		doc[0] = $ifaceNil;
-		_r$3 = yaml.Unmarshal(buf, (doc.$ptr || (doc.$ptr = new ptrType$2(function() { return this.$target[0]; }, function($v) { this.$target[0] = $v; }, doc)))); /* */ $s = 4; case 4: if($c) { $c = false; _r$3 = _r$3.$blk(); } if (_r$3 && _r$3.$blk !== undefined) { break s; }
-		errParse = _r$3;
-		/* */ if (!($interfaceIsEqual(errParse, $ifaceNil))) { $s = 5; continue; }
-		/* */ $s = 6; continue;
-		/* if (!($interfaceIsEqual(errParse, $ifaceNil))) { */ case 5:
-			_r$4 = fmt.Errorf("updateOutput: YAML parse error; %v", new sliceType([errParse])); /* */ $s = 7; case 7: if($c) { $c = false; _r$4 = _r$4.$blk(); } if (_r$4 && _r$4.$blk !== undefined) { break s; }
-			msg = _r$4;
-			$r = logf("%s", new sliceType([msg])); /* */ $s = 8; case 8: if($c) { $c = false; $r = $r.$blk(); } if ($r && $r.$blk !== undefined) { break s; }
-			_r$5 = msg.Error(); /* */ $s = 9; case 9: if($c) { $c = false; _r$5 = _r$5.$blk(); } if (_r$5 && _r$5.$blk !== undefined) { break s; }
-			result = _r$5;
+		_r$4 = yaml.Unmarshal(buf, (doc.$ptr || (doc.$ptr = new ptrType$3(function() { return this.$target[0]; }, function($v) { this.$target[0] = $v; }, doc)))); /* */ $s = 5; case 5: if($c) { $c = false; _r$4 = _r$4.$blk(); } if (_r$4 && _r$4.$blk !== undefined) { break s; }
+		errParse = _r$4;
+		/* */ if (!($interfaceIsEqual(errParse, $ifaceNil))) { $s = 6; continue; }
+		/* */ $s = 7; continue;
+		/* if (!($interfaceIsEqual(errParse, $ifaceNil))) { */ case 6:
+			_r$5 = fmt.Errorf("updateOutput: YAML parse error; %v", new sliceType([errParse])); /* */ $s = 8; case 8: if($c) { $c = false; _r$5 = _r$5.$blk(); } if (_r$5 && _r$5.$blk !== undefined) { break s; }
+			msg = _r$5;
+			$r = logf("%s", new sliceType([msg])); /* */ $s = 9; case 9: if($c) { $c = false; $r = $r.$blk(); } if ($r && $r.$blk !== undefined) { break s; }
+			_r$6 = msg.Error(); /* */ $s = 10; case 10: if($c) { $c = false; _r$6 = _r$6.$blk(); } if (_r$6 && _r$6.$blk !== undefined) { break s; }
+			result = _r$6;
 			setOutput(o, $internalize(p.BasicHTMLElement.BasicElement.BasicNode.Object.value, $String), $internalize(i.BasicHTMLElement.BasicElement.BasicNode.Object.value, $String), result);
 			$s = -1; return;
-		/* } */ case 6:
-		disableHTMLEscape = true;
+		/* } */ case 7:
 		errRender = $ifaceNil;
-		_r$6 = mustache.RenderRaw($internalize(i.BasicHTMLElement.BasicElement.BasicNode.Object.value, $String), disableHTMLEscape, new sliceType([doc[0]])); /* */ $s = 10; case 10: if($c) { $c = false; _r$6 = _r$6.$blk(); } if (_r$6 && _r$6.$blk !== undefined) { break s; }
-		_tuple$3 = _r$6;
-		result = _tuple$3[0];
-		errRender = _tuple$3[1];
-		/* */ if (!($interfaceIsEqual(errRender, $ifaceNil))) { $s = 11; continue; }
-		/* */ $s = 12; continue;
-		/* if (!($interfaceIsEqual(errRender, $ifaceNil))) { */ case 11:
-			_r$7 = fmt.Errorf("updateOutput: mustache render error; %v", new sliceType([errRender])); /* */ $s = 13; case 13: if($c) { $c = false; _r$7 = _r$7.$blk(); } if (_r$7 && _r$7.$blk !== undefined) { break s; }
-			msg$1 = _r$7;
-			$r = logf("%s", new sliceType([msg$1])); /* */ $s = 14; case 14: if($c) { $c = false; $r = $r.$blk(); } if ($r && $r.$blk !== undefined) { break s; }
-			_r$8 = msg$1.Error(); /* */ $s = 15; case 15: if($c) { $c = false; _r$8 = _r$8.$blk(); } if (_r$8 && _r$8.$blk !== undefined) { break s; }
-			result = _r$8;
-		/* } */ case 12:
+		_r$7 = mustache.RenderRaw($internalize(i.BasicHTMLElement.BasicElement.BasicNode.Object.value, $String), disableHTMLEscape, new sliceType([doc[0]])); /* */ $s = 11; case 11: if($c) { $c = false; _r$7 = _r$7.$blk(); } if (_r$7 && _r$7.$blk !== undefined) { break s; }
+		_tuple$4 = _r$7;
+		result = _tuple$4[0];
+		errRender = _tuple$4[1];
+		/* */ if (!($interfaceIsEqual(errRender, $ifaceNil))) { $s = 12; continue; }
+		/* */ $s = 13; continue;
+		/* if (!($interfaceIsEqual(errRender, $ifaceNil))) { */ case 12:
+			_r$8 = fmt.Errorf("updateOutput: mustache render error; %v", new sliceType([errRender])); /* */ $s = 14; case 14: if($c) { $c = false; _r$8 = _r$8.$blk(); } if (_r$8 && _r$8.$blk !== undefined) { break s; }
+			msg$1 = _r$8;
+			$r = logf("%s", new sliceType([msg$1])); /* */ $s = 15; case 15: if($c) { $c = false; $r = $r.$blk(); } if ($r && $r.$blk !== undefined) { break s; }
+			_r$9 = msg$1.Error(); /* */ $s = 16; case 16: if($c) { $c = false; _r$9 = _r$9.$blk(); } if (_r$9 && _r$9.$blk !== undefined) { break s; }
+			result = _r$9;
+		/* } */ case 13:
 		setOutput(o, $internalize(p.BasicHTMLElement.BasicElement.BasicNode.Object.value, $String), $internalize(i.BasicHTMLElement.BasicElement.BasicNode.Object.value, $String), result);
 		$s = -1; return;
-		/* */ } return; } if ($f === undefined) { $f = { $blk: updateOutput }; } $f._r = _r; $f._r$1 = _r$1; $f._r$2 = _r$2; $f._r$3 = _r$3; $f._r$4 = _r$4; $f._r$5 = _r$5; $f._r$6 = _r$6; $f._r$7 = _r$7; $f._r$8 = _r$8; $f._tuple = _tuple; $f._tuple$1 = _tuple$1; $f._tuple$2 = _tuple$2; $f._tuple$3 = _tuple$3; $f.buf = buf; $f.disableHTMLEscape = disableHTMLEscape; $f.doc = doc; $f.errParse = errParse; $f.errRender = errRender; $f.i = i; $f.input = input; $f.isInput = isInput; $f.isOutput = isOutput; $f.isParam = isParam; $f.msg = msg; $f.msg$1 = msg$1; $f.o = o; $f.output = output; $f.p = p; $f.param = param; $f.result = result; $f.$s = $s; $f.$r = $r; return $f;
+		/* */ } return; } if ($f === undefined) { $f = { $blk: updateOutput }; } $f._r = _r; $f._r$1 = _r$1; $f._r$2 = _r$2; $f._r$3 = _r$3; $f._r$4 = _r$4; $f._r$5 = _r$5; $f._r$6 = _r$6; $f._r$7 = _r$7; $f._r$8 = _r$8; $f._r$9 = _r$9; $f._tuple = _tuple; $f._tuple$1 = _tuple$1; $f._tuple$2 = _tuple$2; $f._tuple$3 = _tuple$3; $f._tuple$4 = _tuple$4; $f.buf = buf; $f.disableHTMLEscape = disableHTMLEscape; $f.doc = doc; $f.e = e; $f.errParse = errParse; $f.errRender = errRender; $f.escaping = escaping; $f.i = i; $f.input = input; $f.isInput = isInput; $f.isOutput = isOutput; $f.isParam = isParam; $f.msg = msg; $f.msg$1 = msg$1; $f.o = o; $f.output = output; $f.p = p; $f.param = param; $f.result = result; $f.$s = $s; $f.$r = $r; return $f;
 	};
 	setOutput = function(output, param, input, result) {
 		var input, output, param, result;

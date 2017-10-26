@@ -12,7 +12,7 @@ import (
 	"honnef.co/go/js/dom"
 )
 
-const version = "0.8"
+const version = "0.9"
 
 func main() {
 
@@ -20,6 +20,7 @@ func main() {
 	input := docQuery("#input")
 	logbox := docQuery("#log")
 	button := docQuery("#button-output-copy")
+	checkEscaping := docQuery("#escaping")
 
 	if box, ok := logbox.(*dom.HTMLTextAreaElement); ok {
 		box.Value = "" // clear log
@@ -37,8 +38,19 @@ func main() {
 	param.AddEventListener("keyup", false, listenerParam)
 	input.AddEventListener("keyup", false, listenerInput)
 	button.AddEventListener("click", false, buttonOutputCopy)
+	checkEscaping.AddEventListener("change", false, toggleEscaping)
 
 	updateOutput() // the first update
+}
+
+func toggleEscaping(ev dom.Event) {
+	escaping := docQuery("#escaping")
+	i, isInput := escaping.(*dom.HTMLInputElement)
+	if !isInput {
+		return
+	}
+	logf("toggleEscaping: %v checked=%v", i, i.Checked)
+	updateOutput()
 }
 
 func buttonOutputCopy(ev dom.Event) {
@@ -94,6 +106,13 @@ func updateOutput() {
 		return
 	}
 
+	escaping := docQuery("#escaping")
+	e, isInput := escaping.(*dom.HTMLInputElement)
+	if !isInput {
+		return
+	}
+	disableHTMLEscape := !e.Checked
+
 	var result string
 
 	buf := []byte(p.Value)
@@ -107,7 +126,6 @@ func updateOutput() {
 		return
 	}
 
-	disableHTMLEscape := true
 	var errRender error
 	result, errRender = mustache.RenderRaw(i.Value, disableHTMLEscape, doc)
 	if errRender != nil {
