@@ -4,15 +4,15 @@
 
 echo GOPATH=$GOPATH
 
-go get -insecure honnef.co/go/tools/cmd/unused
-go get -insecure honnef.co/go/tools/cmd/gosimple
-go get -insecure honnef.co/go/tools/cmd/staticcheck
+go get honnef.co/go/tools/cmd/unused
+go get honnef.co/go/tools/cmd/gosimple
+go get honnef.co/go/tools/cmd/staticcheck
 go get github.com/golang/lint/golint
 
 go get github.com/gopherjs/gopherjs
 #go get github.com/cbroglie/mustache
 go get github.com/udhos/mustache
-go get -insecure honnef.co/go/js/dom
+go get honnef.co/go/js/dom
 go get gopkg.in/yaml.v2
 
 gofmt -s -w main.go
