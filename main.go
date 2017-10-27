@@ -3,9 +3,11 @@ package main
 import (
 	"fmt"
 	"log"
+	"runtime"
 	"strings"
 
 	//"github.com/cbroglie/mustache"
+	"github.com/gopherjs/gopherjs/compiler"
 	"github.com/gopherjs/gopherjs/js"
 	"github.com/udhos/mustache"
 	"gopkg.in/yaml.v2"
@@ -26,7 +28,7 @@ func main() {
 		box.Value = "" // clear log
 	}
 
-	logf("main: mustago version: %s", version)
+	logf("main: mustago %s, go %s, gopherjs %s", version, runtime.Version(), compiler.Version)
 
 	ver := docQuery("#version")
 	if v, ok := ver.(*dom.HTMLSpanElement); ok {
